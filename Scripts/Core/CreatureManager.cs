@@ -55,9 +55,7 @@ namespace EvoTap
 
 			// GameManager nie ma bezpośredniej metody SpendDna — 
 			// modyfikujemy przez właściwość. Lub dodaj SpendDna() do GameManager.
-			GameManager.Instance.GetType()
-				.GetProperty("Dna")
-				?.SetValue(GameManager.Instance, GameManager.Instance.Dna - LineData.UnlockCost);
+			GameManager.Instance.SpendDna(LineData.UnlockCost);
 
 			_save.IsUnlocked = true;
 			SaveManager.Instance.Save();
@@ -206,14 +204,7 @@ namespace EvoTap
 
 		private void SpendDna(double amount)
 		{
-			// Refleksja jest brzydka — dodaj publiczną metodę SpendDna do GameManager
-			// Tutaj uproszczone:
-			var prop = typeof(GameManager).GetProperty("Dna");
-			if (prop != null)
-			{
-				double current = (double)prop.GetValue(GameManager.Instance);
-				prop.SetValue(GameManager.Instance, current - amount);
-			}
+			GameManager.Instance.SpendDna(amount); // już istnieje w GameManagerExtensions.cs
 		}
 
 		private void CheckBiomeCompletion()
@@ -231,6 +222,7 @@ namespace EvoTap
 				UnlockNextBiome();
 			}
 		}
+		[Export] private PackedScene _biomeTransitionScene;
 
 		private void UnlockNextBiome()
 		{
@@ -243,7 +235,7 @@ namespace EvoTap
 				nextSave.IsUnlocked = true;
 				SaveManager.Instance.Save();
 				GD.Print($"[CreatureManager] Odblokowano biom: {next}!");
-				// Opcjonalnie: wyemituj sygnał do UI żeby pokazać animację przejścia
+				BiomeTransitionScreen.Show(_biomeTransitionScene, next);
 			}
 		}
 	}

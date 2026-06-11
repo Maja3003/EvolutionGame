@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b87snlquwsty1"]
+
+[ext_resource type="Script" uid="uid://dxgrm6hrb046d" path="res://Scripts/Core/BiomeManager.cs" id="1_mwnjs"]
+[ext_resource type="Script" uid="uid://ceyu3fuu8b3sq" path="res://Scripts/Data/BiomeData.cs" id="2_r1j6v"]
+[ext_resource type="Resource" uid="uid://p4s0qdifoi16" path="res://Resources/Biomes/Ocean.tres" id="3_q0jov"]
+
+[node name="BiomeManager" type="Node" unique_id=373186150]
+script = ExtResource("1_mwnjs")
+AllBiomes = Array[ExtResource("2_r1j6v")]([ExtResource("3_q0jov")])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CreatureStageData" format=3 uid="uid://dcj1ip26x1urp"]
+
+[ext_resource type="Script" uid="uid://cwntcftcmpom5" path="res://Scripts/Data/CreatureStageData.cs" id="1_3d453"]
+
+[resource]
+script = ExtResource("1_3d453")
+StageName = "Neonka"
+DnaCostToEvolve = 50.0
+metadata/_custom_type_script = "uid://cwntcftcmpom5"

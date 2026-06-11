@@ -48,9 +48,9 @@ namespace EvoTap
 			SwitchTab(GameManager.Instance.CurrentBiome);
 
 			// Animacja wejścia
-			Modulate = new Color(1, 1, 1, 0);
-			var tween = CreateTween();
-			tween.TweenProperty(this, "modulate", Colors.White, 0.2);
+			GetChild<Control>(0).Modulate = new Color(1, 1, 1, 0);
+var tween = CreateTween();
+tween.TweenProperty(GetChild<Control>(0), "modulate", Colors.White, 0.2);
 		}
 
 		// ── ZAKŁADKI ───────────────────────────────────────────────────────

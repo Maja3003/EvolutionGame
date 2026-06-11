@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cglq7o21iwqru"]
+
+[ext_resource type="Script" uid="uid://blxus3r31mkps" path="res://Scripts/Gameplay/EvolutionAnimationPlayer.cs" id="1_b2dmp"]
+
+[node name="EvolutionAnimationPlayer" type="CanvasLayer" unique_id=462611419 node_paths=PackedStringArray("_flashRect", "_evoLabel")]
+layer = 5
+script = ExtResource("1_b2dmp")
+_flashRect = NodePath("Control/FlashRect")
+_evoLabel = NodePath("Control/EvoLabel")
+
+[node name="Control" type="Control" parent="." unique_id=1003379200]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlashRect" type="ColorRect" parent="Control" unique_id=716192179]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EvoLabel" type="Label" parent="Control" unique_id=1510009689]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "EWOLUCJA!"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://baamcgab5v034"]
+
+[ext_resource type="Script" uid="uid://b1od8dufaquq" path="res://Scripts/Gameplay/FloatingDnaText.cs" id="1_gqrj2"]
+
+[node name="FloatingDnaText" type="Node2D" unique_id=2080039865 node_paths=PackedStringArray("_label")]
+z_index = 10
+script = ExtResource("1_gqrj2")
+_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=1031462971]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 24
+text = "+0"
+horizontal_alignment = 1

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CreatureLineData" format=3 uid="uid://k74nymcsjkrr"]
+
+[ext_resource type="Script" uid="uid://cwntcftcmpom5" path="res://Scripts/Data/CreatureStageData.cs" id="1_hdrgu"]
+[ext_resource type="Resource" uid="uid://d2detjt2jqb61" path="res://Resources/Creatures/Ocean/Ocean_medusa_Stage1.tres" id="2_g2tl8"]
+[ext_resource type="Resource" uid="uid://qfg5htpr2ihh" path="res://Resources/Creatures/Ocean/Ocean_medusa_Stage2.tres" id="3_p5tfd"]
+[ext_resource type="Resource" uid="uid://ch563bbx6pl61" path="res://Resources/Creatures/Ocean/Ocean_medusa_Stage3.tres" id="4_rask0"]
+[ext_resource type="Resource" uid="uid://btm7dskyakdov" path="res://Resources/Creatures/Ocean/Ocean_medusa_Stage4A.tres" id="5_5kt1j"]
+[ext_resource type="Resource" uid="uid://2fqfymx83lgq" path="res://Resources/Creatures/Ocean/Ocean_medusa_Stage4B.tres" id="6_xwruk"]
+[ext_resource type="Script" uid="uid://bw1dt23ww1x7v" path="res://Scripts/Data/CreatureLineData.cs" id="7_86y6r"]
+
+[resource]
+script = ExtResource("7_86y6r")
+LineId = "ocean_medusa"
+LineName = "Linia Meduzy"
+UnlockCost = 1000.0
+LinearStages = Array[ExtResource("1_hdrgu")]([ExtResource("2_g2tl8"), ExtResource("3_p5tfd"), ExtResource("4_rask0")])
+PathAFinalStage = ExtResource("5_5kt1j")
+PathBFinalStage = ExtResource("6_xwruk")
+PathAName = "Król Głębin"
+PathBName = "Strażnik Rafy"
+metadata/_custom_type_script = "uid://bw1dt23ww1x7v"

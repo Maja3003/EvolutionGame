@@ -85,7 +85,7 @@ namespace EvoTap
 			var text = _floatingTextScene.Instantiate<FloatingDnaText>();
 			_floatingTextSpawner.GetParent().AddChild(text);
 			text.GlobalPosition = _floatingTextSpawner.GlobalPosition
-								  + new Vector2(GD.RandRange(-30f, 30f), 0);
+					  + new Vector2((float)GD.RandRange(-30.0, 30.0), 0);
 			text.SetText($"+{GameManager.FormatDna(amount)}");
 		}
 

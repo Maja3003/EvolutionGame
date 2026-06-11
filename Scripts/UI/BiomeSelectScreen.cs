@@ -25,9 +25,9 @@ namespace EvoTap
 			_closeButton.Pressed += Close;
 			PopulateBiomeList();
 
-			Modulate = new Color(1, 1, 1, 0);
-			var tween = CreateTween();
-			tween.TweenProperty(this, "modulate", Colors.White, 0.2);
+			GetChild<Control>(0).Modulate = new Color(1, 1, 1, 0);
+var tween = CreateTween();
+tween.TweenProperty(GetChild<Control>(0), "modulate", Colors.White, 0.2);
 		}
 
 		private void PopulateBiomeList()
@@ -59,7 +59,7 @@ namespace EvoTap
 		private void Close()
 		{
 			var tween = CreateTween();
-			tween.TweenProperty(this, "modulate", new Color(1, 1, 1, 0), 0.15);
+			tween.TweenProperty(GetChild<Control>(0), "modulate", new Color(1, 1, 1, 0), 0.15);
 			tween.TweenCallback(Callable.From(QueueFree));
 		}
 	}

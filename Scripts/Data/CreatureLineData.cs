@@ -34,7 +34,7 @@ namespace EvoTap
 		// Opis wyboru pokazywany w pop-upie
 		[Export] public string PathAName { get; set; } = "Ścieżka A";
 		[Export] public string PathBName { get; set; } = "Ścieżka B";
-		[Export][Multiline] public string PathADescription { get; set; } = "";
-		[Export][Multiline] public string PathBDescription { get; set; } = "";
+		[Export(PropertyHint.MultilineText)] public string PathADescription { get; set; } = "";
+		[Export(PropertyHint.MultilineText)] public string PathBDescription { get; set; } = "";
 	}
 }

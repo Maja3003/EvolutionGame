@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cegp8xk7e8j2m"]
+
+[ext_resource type="Script" uid="uid://cfg6c80nva86c" path="res://Scripts/Gameplay/CreatureClickArea.cs" id="1_lwyy1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t644p"]
+size = Vector2(200, 200)
+
+[node name="CreatureClickArea" type="Area2D" unique_id=40019798 node_paths=PackedStringArray("_creatureSprite", "_floatingTextSpawner")]
+script = ExtResource("1_lwyy1")
+_creatureSprite = NodePath("CreatureSprite")
+_floatingTextSpawner = NodePath("FloatingTextSpawner")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=953641449]
+shape = SubResource("RectangleShape2D_t644p")
+
+[node name="FloatingTextSpawner" type="Node2D" parent="." unique_id=418305478]
+
+[node name="CreatureSprite" type="AnimatedSprite2D" parent="." unique_id=652797803]

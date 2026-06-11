@@ -74,7 +74,7 @@ namespace EvoTap
 			_pathBButton.Pressed += () => Choose(EvolutionPath.PathB);
 
 			// Animacja wejścia
-			Modulate = new Color(1, 1, 1, 0);
+			GetChild<Control>(0).Modulate = new Color(1, 1, 1, 0);
 			var tween = CreateTween();
 			tween.TweenProperty(this, "modulate", new Color(1, 1, 1, 1), 0.25);
 		}

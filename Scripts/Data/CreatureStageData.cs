@@ -25,6 +25,6 @@ namespace EvoTap
 		[Export] public double OfflineMultiplier { get; set; } = 1.0;
 
 		// Unlock hint wyświetlany w Atlasie gdy zablokowane
-		[Export][Multiline] public string UnlockHint { get; set; } = "";
+		[Export(PropertyHint.MultilineText)] public string UnlockHint { get; set; } = "";
 	}
 }

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CreatureStageData" format=3 uid="uid://dhqr3yt7umpr8"]
+
+[ext_resource type="Script" uid="uid://cwntcftcmpom5" path="res://Scripts/Data/CreatureStageData.cs" id="1_qbsjw"]
+
+[resource]
+script = ExtResource("1_qbsjw")
+metadata/_custom_type_script = "uid://cwntcftcmpom5"

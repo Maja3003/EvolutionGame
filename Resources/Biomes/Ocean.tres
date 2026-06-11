@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BiomeData" format=3 uid="uid://p4s0qdifoi16"]
+
+[ext_resource type="Script" uid="uid://bw1dt23ww1x7v" path="res://Scripts/Data/CreatureLineData.cs" id="1_akwnh"]
+[ext_resource type="Resource" uid="uid://cfxkgsqb50ns6" path="res://Resources/Creatures/Ocean/Ocean_Line1.tres" id="2_eefdy"]
+[ext_resource type="Script" uid="uid://ceyu3fuu8b3sq" path="res://Scripts/Data/BiomeData.cs" id="2_lp2nj"]
+
+[resource]
+script = ExtResource("2_lp2nj")
+BiomeName = "Neonowy Ocean"
+CreatureLines = Array[ExtResource("1_akwnh")]([ExtResource("2_eefdy")])
+metadata/_custom_type_script = "uid://ceyu3fuu8b3sq"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CreatureStageData" format=3 uid="uid://c8dxd05ys8iwb"]
+
+[ext_resource type="Script" uid="uid://cwntcftcmpom5" path="res://Scripts/Data/CreatureStageData.cs" id="1_pw1na"]
+
+[resource]
+script = ExtResource("1_pw1na")
+StageName = "Kałamarnica Głębin"
+EvoLevel = 3
+DnaCostToEvolve = 500.0
+metadata/_custom_type_script = "uid://cwntcftcmpom5"

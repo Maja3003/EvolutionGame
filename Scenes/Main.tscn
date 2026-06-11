@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dkvg8apcfepju"]
+
+[ext_resource type="Script" uid="uid://cuqbs3jf4k756" path="res://Scripts/UI/HUD.cs" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://cegp8xk7e8j2m" path="res://Scenes/Creatures/CreatureClickArea.tscn" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://baamcgab5v034" path="res://Scenes/Gameplay/FloatingDnaText.tscn" id="4_50glp"]
+[ext_resource type="Script" uid="uid://c2mvl1n6eovr6" path="res://Scripts/Core/CreatureManager.cs" id="4_v1gob"]
+[ext_resource type="Resource" uid="uid://cfxkgsqb50ns6" path="res://Resources/Creatures/Ocean/Ocean_Line1.tres" id="5_jw32o"]
+[ext_resource type="PackedScene" uid="uid://cglq7o21iwqru" path="res://Scenes/Gameplay/EvolutionAnimationPlayer.tscn" id="6_v1gob"]
+[ext_resource type="PackedScene" uid="uid://b3d4l5l1pb2io" path="res://Scenes/UI/CreatureLineUI.tscn" id="7_jw32o"]
+
+[node name="Node2D" type="Node2D" unique_id=254314707]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1071645802 node_paths=PackedStringArray("_dnaLabel", "_dpsLabel", "_biomeNameLabel", "_atlasButton", "_biomeSelectButton", "_prestigeButton")]
+script = ExtResource("1_r150o")
+_dnaLabel = NodePath("DnaLabel")
+_dpsLabel = NodePath("DpsLabel")
+_biomeNameLabel = NodePath("BiomeNameLabel")
+_atlasButton = NodePath("AtlasButton")
+_biomeSelectButton = NodePath("BiomeSelectButton")
+_prestigeButton = NodePath("PrestigeButton")
+
+[node name="DnaLabel" type="Label" parent="HUD" unique_id=1570349478]
+offset_left = 32.0
+offset_top = 18.0
+offset_right = 52.0
+offset_bottom = 41.0
+
+[node name="DpsLabel" type="Label" parent="HUD" unique_id=1855997190]
+offset_left = 32.0
+offset_top = 50.0
+offset_right = 72.0
+offset_bottom = 75.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AtlasButton" type="Button" parent="HUD" unique_id=318915495]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="BiomeSelectButton" type="Button" parent="HUD" unique_id=1112945056]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PrestigeButton" type="Button" parent="HUD" unique_id=2067640761]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 8.0
+grow_vertical = 0
+
+[node name="BiomeNameLabel" type="Label" parent="HUD" unique_id=1924699514]
+offset_left = 239.0
+offset_top = 14.0
+offset_right = 279.0
+offset_bottom = 37.0
+
+[node name="CreatureClickArea" parent="." unique_id=40019798 instance=ExtResource("2_idj7w")]
+position = Vector2(194, 444)
+_floatingTextScene = ExtResource("4_50glp")
+
+[node name="CreatureManager" type="Node" parent="." unique_id=956149255]
+script = ExtResource("4_v1gob")
+LineData = ExtResource("5_jw32o")
+
+[node name="EvolutionAnimationPlayer" parent="." unique_id=462611419 instance=ExtResource("6_v1gob")]
+
+[node name="CreatureLineUI" parent="." unique_id=1347402245 instance=ExtResource("7_jw32o")]
+offset_left = 43.0
+offset_top = 631.0
+offset_right = 343.0
+offset_bottom = 828.0
+LineData = ExtResource("5_jw32o")

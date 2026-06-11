@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dnu2p04ukxxq6"]
+
+[ext_resource type="Script" uid="uid://cxiq02x2oqfgw" path="res://Scripts/UI/PathChoicePopup.cs" id="1_xmmul"]
+
+[node name="PathChoicePopup" type="CanvasLayer" unique_id=1623718792 node_paths=PackedStringArray("_titleLabel", "_creatureNameLabel", "_pathAButton", "_pathBButton", "_pathANameLabel", "_pathBNameLabel", "_pathADescLabel", "_pathBDescLabel", "_pathAPreview", "_pathBPreview")]
+layer = 10
+script = ExtResource("1_xmmul")
+_titleLabel = NodePath("CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/TitleLabel")
+_creatureNameLabel = NodePath("CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/CreatureNameLabel")
+_pathAButton = NodePath("CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/PathAButton")
+_pathBButton = NodePath("CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PathBButton")
+_pathANameLabel = NodePath("CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/PathANameLabel")
+_pathBNameLabel = NodePath("CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PathBNameLabel")
+_pathADescLabel = NodePath("CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/PathADescLabel")
+_pathBDescLabel = NodePath("CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PathBDescLabel")
+_pathAPreview = NodePath("CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/PathAPreview")
+_pathBPreview = NodePath("CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PathBPreview")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=120415337]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=464093269]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=694738889]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=195866773]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer" unique_id=385792626]
+layout_mode = 2
+text = "Wybierz ścieżkę ewolucji!"
+
+[node name="CreatureNameLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer" unique_id=53376247]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer" unique_id=683876312]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=836805341]
+layout_mode = 2
+
+[node name="PathAPreview" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1853279177]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="PathANameLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2032051929]
+layout_mode = 2
+
+[node name="PathADescLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=440799175]
+layout_mode = 2
+
+[node name="PathAButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1033844295]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1662299466]
+layout_mode = 2
+
+[node name="PathBPreview" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=168969903]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="PathBNameLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=548870417]
+layout_mode = 2
+
+[node name="PathBDescLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=937565262]
+layout_mode = 2
+
+[node name="PathBButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=877774721]
+layout_mode = 2
+
+[node name="WarningLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer" unique_id=1399689497]
+layout_mode = 2
+text = "Ta decyzja jest permanentna."

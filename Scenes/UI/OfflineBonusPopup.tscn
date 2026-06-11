@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://qnluv28de48q"]
+
+[ext_resource type="Script" uid="uid://dj0slhi07lghn" path="res://Scripts/UI/OfflineBonusPopup.cs" id="1_lnube"]
+
+[node name="OfflineBonusPopup" type="CanvasLayer" unique_id=1448397002 node_paths=PackedStringArray("_titleLabel", "_timeLabel", "_dnaLabel", "_watchAdButton", "_closeButton")]
+layer = 8
+script = ExtResource("1_lnube")
+_titleLabel = NodePath("CenterContainer/VBoxContainer/Label")
+_timeLabel = NodePath("CenterContainer/VBoxContainer/Label2")
+_dnaLabel = NodePath("CenterContainer/VBoxContainer/Label3")
+_watchAdButton = NodePath("CenterContainer/VBoxContainer/Button")
+_closeButton = NodePath("CenterContainer/VBoxContainer/Button2")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=589787244]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1327555070]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=159691426]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1324457972]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer" unique_id=856809852]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1036839237]
+layout_mode = 2
+text = "📺 Obejrzyj reklamę → ×2"
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1651202721]
+layout_mode = 2
+text = "Odbierz"

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c8k7xw4ly7ahc"]
+
+[ext_resource type="Script" uid="uid://d0u4axuv0edee" path="res://Scripts/UI/AtlasScreen.cs" id="1_kj8do"]
+
+[node name="AtlasScreen" type="CanvasLayer" unique_id=640242456 node_paths=PackedStringArray("_closeButton", "_biomeTabBar", "_cardGrid")]
+layer = 8
+script = ExtResource("1_kj8do")
+_closeButton = NodePath("MarginContainer/VBoxContainer/CloseButton")
+_biomeTabBar = NodePath("MarginContainer/HBoxContainer")
+_cardGrid = NodePath("MarginContainer/GridContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1727809017]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=267493009]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=876038232]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=43604668]
+layout_mode = 2
+text = "ATLAS EWOLUCJI"
+
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1619110736]
+layout_mode = 2
+text = "✕"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1103184814]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=434772163]
+layout_mode = 2
+columns = 3

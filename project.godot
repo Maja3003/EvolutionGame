@@ -11,9 +11,23 @@ config_version=5
 [application]
 
 config/name="Nowy projekt gry"
-run/main_scene="uid://cipsw73u2pcno"
+run/main_scene="uid://dkvg8apcfepju"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SaveManager="*uid://ccxu0wnvrx1oy"
+GameManager="*uid://bco4mej4ahrdy"
+BiomeManager="*uid://b87snlquwsty1"
+AdManager="*uid://bhgmxih3vs242"
+
+[display]
+
+window/size/viewport_width=390
+window/size/viewport_height=844
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 

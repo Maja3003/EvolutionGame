@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CreatureLineData" format=3 uid="uid://jjahwqgvbm6j"]
+
+[ext_resource type="Script" uid="uid://cwntcftcmpom5" path="res://Scripts/Data/CreatureStageData.cs" id="1_xaxpv"]
+[ext_resource type="Resource" uid="uid://dggg7le7g7mtm" path="res://Resources/Creatures/Ocean/Ocean_crab_Stage1.tres" id="2_f0lme"]
+[ext_resource type="Resource" uid="uid://bkux7a36ggkoc" path="res://Resources/Creatures/Ocean/Ocean_crab_Stage2.tres" id="3_jdwmn"]
+[ext_resource type="Resource" uid="uid://dvuidg0yjv8gw" path="res://Resources/Creatures/Ocean/Ocean_crab_Stage3.tres" id="4_tq67l"]
+[ext_resource type="Resource" uid="uid://dhqr3yt7umpr8" path="res://Resources/Creatures/Ocean/Ocean_crab_Stage4A.tres" id="5_27vqm"]
+[ext_resource type="Resource" uid="uid://ddvlytnaes1bg" path="res://Resources/Creatures/Ocean/Ocean_crab_Stage4B.tres" id="6_86agt"]
+[ext_resource type="Script" uid="uid://bw1dt23ww1x7v" path="res://Scripts/Data/CreatureLineData.cs" id="7_w426e"]
+
+[resource]
+script = ExtResource("7_w426e")
+LineId = "ocean_crab"
+LineName = "Linia Kraba"
+UnlockCost = 5000.0
+LinearStages = Array[ExtResource("1_xaxpv")]([ExtResource("2_f0lme"), ExtResource("3_jdwmn"), ExtResource("4_tq67l")])
+PathAFinalStage = ExtResource("5_27vqm")
+PathBFinalStage = ExtResource("6_86agt")
+metadata/_custom_type_script = "uid://bw1dt23ww1x7v"

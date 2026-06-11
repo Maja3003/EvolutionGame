@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://18efoif7rkef"]
+
+[ext_resource type="Script" uid="uid://b4reqdhx2jyf2" path="res://Scripts/UI/BiomeSelectScreen.cs" id="1_j7ckr"]
+
+[node name="BiomeSelectScreen" type="CanvasLayer" unique_id=1672163516 node_paths=PackedStringArray("_closeButton", "_biomeList")]
+script = ExtResource("1_j7ckr")
+_closeButton = NodePath("MarginContainer/VBoxContainer/CloseButton")
+_biomeList = NodePath("MarginContainer/VBoxContainer/BiomeList")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=86376129]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1776753455]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=795004706]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=519766849]
+layout_mode = 2
+
+[node name="BiomeList" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=990743695]
+layout_mode = 2

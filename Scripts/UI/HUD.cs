@@ -44,7 +44,7 @@ namespace EvoTap
 
 			// Init
 			OnDnaChanged(GameManager.Instance.Dna);
-			OnBiomeChanged((int)GameManager.Instance.CurrentBiome);
+			OnBiomeChanged(GameManager.Instance.CurrentBiome);
 			_prestigeButton.Visible = GameManager.Instance.IsPrestigeAvailable();
 		}
 
@@ -66,13 +66,12 @@ namespace EvoTap
 				_dnaLabel.Text = $"🧬 {GameManager.FormatDna(newAmount)}";
 		}
 
-		private void OnBiomeChanged(int biomeInt)
-		{
-			var biome = (BiomeType)biomeInt;
-			var data = BiomeManager.Instance?.GetBiomeData(biome);
-			if (_biomeNameLabel != null)
-				_biomeNameLabel.Text = data?.BiomeName ?? biome.ToString();
-		}
+		private void OnBiomeChanged(BiomeType biome)
+{
+	var data = BiomeManager.Instance?.GetBiomeData(biome);
+	if (_biomeNameLabel != null)
+		_biomeNameLabel.Text = data?.BiomeName ?? biome.ToString();
+}
 
 		private void OnPrestigeAvailable()
 		{

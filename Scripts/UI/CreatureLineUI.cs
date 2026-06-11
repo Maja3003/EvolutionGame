@@ -138,6 +138,7 @@ namespace EvoTap
 
 		private void OnEvolved(int newStageIndex, bool isFinal)
 		{
+			EvolutionAnimationPlayer.Instance?.PlayEvolution(isFinal);
 			// Mała animacja celebracji — możesz dodać Tween
 			var tween = CreateTween();
 			tween.TweenProperty(this, "scale", new Vector2(1.1f, 1.1f), 0.1);
