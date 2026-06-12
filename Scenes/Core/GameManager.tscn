@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bco4mej4ahrdy"]
 
 [ext_resource type="Script" uid="uid://cipsw73u2pcno" path="res://Scripts/Core/GameManager.cs" id="1_m2tc1"]
+[ext_resource type="PackedScene" uid="uid://qnluv28de48q" path="res://Scenes/UI/OfflineBonusPopup.tscn" id="2_lmcjo"]
 
 [node name="GameManager" type="Node" unique_id=560582937]
 script = ExtResource("1_m2tc1")
+_offlinePopupScene = ExtResource("2_lmcjo")

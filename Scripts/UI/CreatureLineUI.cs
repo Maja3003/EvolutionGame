@@ -42,6 +42,10 @@ namespace EvoTap
 			_manager = GetParent().FindChild("CreatureManager_" + LineData?.LineId, true, false) as CreatureManager
 					   ?? GetParent().GetNodeOrNull<CreatureManager>("CreatureManager");
 
+			// Znajdź CreatureClickArea dla tej linii (jeśli nie podpięte ręcznie w edytorze)
+			_clickArea ??= GetParent().FindChild("CreatureClickArea_" + LineData?.LineId, true, false) as CreatureClickArea
+						   ?? GetParent().GetNodeOrNull<CreatureClickArea>("CreatureClickArea");
+
 			if (_manager == null)
 			{
 				GD.PrintErr($"[CreatureLineUI] Brak CreatureManagera dla linii: {LineData?.LineId}");
@@ -98,7 +102,7 @@ namespace EvoTap
 				_progressBar.Value = 100;
 
 				// Aktualizuj sprite do formy finalnej
-				_clickArea?.SetCreatureAnimation(stage.StageName);
+				_clickArea?.SetCreatureSprite(stage.Sprite);
 				return;
 			}
 
@@ -116,7 +120,7 @@ namespace EvoTap
 				_dnaCostLabel.Text = $"{GameManager.FormatDna(dna)} / {GameManager.FormatDna(cost.Value)} DNA";
 			}
 
-			_clickArea?.SetCreatureAnimation(stage.StageName);
+			_clickArea?.SetCreatureSprite(stage.Sprite);
 			RefreshButtons();
 		}
 

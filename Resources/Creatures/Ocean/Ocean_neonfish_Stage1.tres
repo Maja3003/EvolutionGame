@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="CreatureStageData" format=3 uid="uid://dcj1ip26x1urp"]
 
 [ext_resource type="Script" uid="uid://cwntcftcmpom5" path="res://Scripts/Data/CreatureStageData.cs" id="1_3d453"]
+[ext_resource type="Texture2D" uid="uid://drwssbfyu7xyx" path="res://Assets/Creatures/Ocean/Neonka_Stage1.png" id="2_neonka_sprite"]
 
 [resource]
 script = ExtResource("1_3d453")
 StageName = "Neonka"
-DnaCostToEvolve = 50.0
+Sprite = ExtResource("2_neonka_sprite")
 metadata/_custom_type_script = "uid://cwntcftcmpom5"

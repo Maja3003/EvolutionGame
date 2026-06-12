@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_n6gqc")
+StageName = "Krab"
+DnaCostToEvolve = 3000.0
 metadata/_custom_type_script = "uid://cwntcftcmpom5"

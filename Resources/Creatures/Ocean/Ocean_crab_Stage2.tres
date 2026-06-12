@@ -4,4 +4,7 @@
 
 [resource]
 script = ExtResource("1_jpgfl")
+StageName = "Krzyżakrab"
+EvoLevel = 2
+DnaCostToEvolve = 12000.0
 metadata/_custom_type_script = "uid://cwntcftcmpom5"

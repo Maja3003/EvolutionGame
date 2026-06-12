@@ -38,6 +38,11 @@ namespace EvoTap
 			{
 				// Pierwsza inicjalizacja tej linii
 				_save = new CreatureLineSaveData { LineId = LineData.LineId };
+
+				// Linie darmowe (UnlockCost <= 0) są odblokowane od razu
+				if (LineData.UnlockCost <= 0)
+					_save.IsUnlocked = true;
+
 				SaveManager.Instance.GetBiomeSave(LineData.Biome)?.CreatureLines.Add(_save);
 			}
 

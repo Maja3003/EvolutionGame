@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_h7par")
+StageName = "Meduza"
+DnaCostToEvolve = 1500.0
 metadata/_custom_type_script = "uid://cwntcftcmpom5"

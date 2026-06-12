@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://bw1dt23ww1x7v" path="res://Scripts/Data/CreatureLineData.cs" id="1_akwnh"]
 [ext_resource type="Resource" uid="uid://cfxkgsqb50ns6" path="res://Resources/Creatures/Ocean/Ocean_Line1.tres" id="2_eefdy"]
 [ext_resource type="Script" uid="uid://ceyu3fuu8b3sq" path="res://Scripts/Data/BiomeData.cs" id="2_lp2nj"]
+[ext_resource type="Resource" uid="uid://k74nymcsjkrr" path="res://Resources/Creatures/Ocean/Ocean_Line2.tres" id="3_medusa"]
+[ext_resource type="Resource" uid="uid://jjahwqgvbm6j" path="res://Resources/Creatures/Ocean/Ocean_Line3.tres" id="4_crab"]
 
 [resource]
 script = ExtResource("2_lp2nj")
 BiomeName = "Neonowy Ocean"
-CreatureLines = Array[ExtResource("1_akwnh")]([ExtResource("2_eefdy")])
+CreatureLines = Array[ExtResource("1_akwnh")]([ExtResource("2_eefdy"), ExtResource("3_medusa"), ExtResource("4_crab")])
 metadata/_custom_type_script = "uid://ceyu3fuu8b3sq"

@@ -4,4 +4,8 @@
 
 [resource]
 script = ExtResource("1_qbsjw")
+StageName = "Tytan Pływów"
+EvoLevel = 4
+Path = 1
+DnaCostToEvolve = 0.0
 metadata/_custom_type_script = "uid://cwntcftcmpom5"

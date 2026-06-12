@@ -15,4 +15,4 @@ shape = SubResource("RectangleShape2D_t644p")
 
 [node name="FloatingTextSpawner" type="Node2D" parent="." unique_id=418305478]
 
-[node name="CreatureSprite" type="AnimatedSprite2D" parent="." unique_id=652797803]
+[node name="CreatureSprite" type="Sprite2D" parent="." unique_id=652797803]

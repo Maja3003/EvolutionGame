@@ -12,7 +12,7 @@
 script = ExtResource("7_86y6r")
 LineId = "ocean_medusa"
 LineName = "Linia Meduzy"
-UnlockCost = 1000.0
+UnlockCost = 600.0
 LinearStages = Array[ExtResource("1_hdrgu")]([ExtResource("2_g2tl8"), ExtResource("3_p5tfd"), ExtResource("4_rask0")])
 PathAFinalStage = ExtResource("5_5kt1j")
 PathBFinalStage = ExtResource("6_xwruk")

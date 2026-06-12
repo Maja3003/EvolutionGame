@@ -1,21 +1,21 @@
 [gd_resource type="Resource" script_class="CreatureLineData" format=3 uid="uid://cfxkgsqb50ns6"]
 
-[ext_resource type="Script" uid="uid://cwntcftcmpom5" path="res://Scripts/Data/CreatureStageData.cs" id="1_num24"]
-[ext_resource type="Resource" uid="uid://dcj1ip26x1urp" path="res://Resources/Creatures/Ocean/Ocean_neonfish_Stage1.tres" id="2_nxmsa"]
-[ext_resource type="Script" uid="uid://bw1dt23ww1x7v" path="res://Scripts/Data/CreatureLineData.cs" id="2_unr0a"]
-[ext_resource type="Resource" uid="uid://bdlofqrdx6a0u" path="res://Resources/Creatures/Ocean/Ocean_neonfish_Stage2.tres" id="3_yfwc5"]
-[ext_resource type="Resource" uid="uid://c8dxd05ys8iwb" path="res://Resources/Creatures/Ocean/Ocean_neonfish_Stage3.tres" id="4_7f8ut"]
-[ext_resource type="Resource" uid="uid://cqdd6vjnknti8" path="res://Resources/Creatures/Ocean/Ocean_neonfish_Stage4A.tres" id="5_7f8ut"]
-[ext_resource type="Resource" uid="uid://bjyhpse3g87li" path="res://Resources/Creatures/Ocean/Ocean_neonfish_Stage4B.tres" id="6_5fsr5"]
+[ext_resource type="Script" uid="uid://cwntcftcmpom5" path="res://Scripts/Data/CreatureStageData.cs" id="1_5pab6"]
+[ext_resource type="Resource" uid="uid://dcj1ip26x1urp" path="res://Resources/Creatures/Ocean/Ocean_neonfish_Stage1.tres" id="2_wcbmw"]
+[ext_resource type="Resource" uid="uid://bdlofqrdx6a0u" path="res://Resources/Creatures/Ocean/Ocean_neonfish_Stage2.tres" id="3_8k6ol"]
+[ext_resource type="Resource" uid="uid://c8dxd05ys8iwb" path="res://Resources/Creatures/Ocean/Ocean_neonfish_Stage3.tres" id="4_cai0a"]
+[ext_resource type="Resource" uid="uid://cqdd6vjnknti8" path="res://Resources/Creatures/Ocean/Ocean_neonfish_Stage4A.tres" id="5_38f46"]
+[ext_resource type="Resource" uid="uid://bjyhpse3g87li" path="res://Resources/Creatures/Ocean/Ocean_neonfish_Stage4B.tres" id="6_rdsxf"]
+[ext_resource type="Script" uid="uid://bw1dt23ww1x7v" path="res://Scripts/Data/CreatureLineData.cs" id="7_57vuj"]
 
 [resource]
-script = ExtResource("2_unr0a")
-LineId = "ocean_neonfish"
-LineName = "Linia neonki"
+script = ExtResource("7_57vuj")
+LineId = "ocean_neonka"
+LineName = "Linia Neonki"
 UnlockCost = 0.0
-LinearStages = Array[ExtResource("1_num24")]([ExtResource("2_nxmsa"), ExtResource("3_yfwc5"), ExtResource("4_7f8ut")])
-PathAFinalStage = ExtResource("5_7f8ut")
-PathBFinalStage = ExtResource("6_5fsr5")
-PathAName = "Drapieżca"
-PathBName = "Opiekun"
+LinearStages = Array[ExtResource("1_5pab6")]([ExtResource("2_wcbmw"), ExtResource("3_8k6ol"), ExtResource("4_cai0a")])
+PathAFinalStage = ExtResource("5_38f46")
+PathBFinalStage = ExtResource("6_rdsxf")
+PathAName = "Ścieżka Mroku"
+PathBName = "Ścieżka Prądu"
 metadata/_custom_type_script = "uid://bw1dt23ww1x7v"

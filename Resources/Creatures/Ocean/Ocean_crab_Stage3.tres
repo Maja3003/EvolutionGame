@@ -4,4 +4,7 @@
 
 [resource]
 script = ExtResource("1_hrtba")
+StageName = "Megalokrab"
+EvoLevel = 3
+DnaCostToEvolve = 32000.0
 metadata/_custom_type_script = "uid://cwntcftcmpom5"

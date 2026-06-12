@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_pw1na")
-StageName = "Kałamarnica Głębin"
+StageName = "Drapieżna Neonka"
 EvoLevel = 3
-DnaCostToEvolve = 500.0
+DnaCostToEvolve = 2000.0
 metadata/_custom_type_script = "uid://cwntcftcmpom5"

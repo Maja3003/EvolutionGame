@@ -9,12 +9,12 @@ namespace EvoTap
 	/// Struktura:
 	///   CreatureClickArea (Area2D)
 	///   ├── CollisionShape2D
-	///   ├── CreatureSprite (AnimatedSprite2D)  ← podmeniasz tekstury przez CreatureLineUI
+	///   ├── CreatureSprite (Sprite2D)          ← podmieniana przez CreatureLineUI
 	///   └── FloatingTextSpawner (Node2D)       ← punkt spawnu latającego tekstu
 	/// </summary>
 	public partial class CreatureClickArea : Area2D
 	{
-		[Export] private AnimatedSprite2D _creatureSprite;
+		[Export] private Sprite2D _creatureSprite;
 		[Export] private Node2D _floatingTextSpawner;
 		[Export] private PackedScene _floatingTextScene;   // res://Scenes/UI/FloatingDnaText.tscn
 
@@ -25,18 +25,66 @@ namespace EvoTap
 		private const float BounceDuration = 0.12f;
 		private const float BounceScale = 1.15f;
 
+		// Docelowa szerokość stworzenia na ekranie (px) — sprite skalowany proporcjonalnie
+		private const float TargetSpriteWidth = 220f;
+
+		// Ciągła animacja "idle" — lekkie kołysanie/unoszenie całego stworzenia
+		private float _idleTime = 0f;
+		private const float IdleBobAmplitude = 6f;
+		private const float IdleBobSpeed = 1.5f;
+		private const float IdleSwayAmplitude = 4f;
+		private const float IdleSwaySpeed = 0.9f;
+		private const float IdleRotationAmplitude = 0.03f; // radiany
+
+		// Animacja "podpłynięcia" co sporo kliknięć
+		private Vector2 _basePosition;
+		private bool _isSwimming = false;
+		private int _clicksSinceSwim = 0;
+		private int _clicksUntilSwim = 0;
+		private const int MinClicksForSwim = 25;
+		private const int MaxClicksForSwim = 40;
+		private const float SwimHeight = 180f;
+
 		public override void _Ready()
 		{
 			InputPickable = true;
 			InputEvent += OnInputEvent;
 			_baseScale = Scale;
+			_basePosition = Position;
+			_clicksUntilSwim = (int)GD.RandRange(MinClicksForSwim, MaxClicksForSwim);
 		}
 
 		public override void _Process(double delta)
 		{
+			float dt = (float)delta;
+
+			ProcessIdleAnimation(dt);
+			ProcessBounce(dt);
+		}
+
+		// ── IDLE ANIMACJA ─────────────────────────────────────────────────
+
+		private void ProcessIdleAnimation(float dt)
+		{
+			if (_creatureSprite == null || _isSwimming) return;
+
+			_idleTime += dt;
+
+			float bobY = Mathf.Sin(_idleTime * IdleBobSpeed) * IdleBobAmplitude;
+			float swayX = Mathf.Sin(_idleTime * IdleSwaySpeed + 1f) * IdleSwayAmplitude;
+			float rot = Mathf.Sin(_idleTime * IdleBobSpeed * 0.7f) * IdleRotationAmplitude;
+
+			_creatureSprite.Position = new Vector2(swayX, bobY);
+			_creatureSprite.Rotation = rot;
+		}
+
+		// ── BOUNCE PRZY KLIKNIĘCIU ────────────────────────────────────────
+
+		private void ProcessBounce(float dt)
+		{
 			if (!_isBouncing) return;
 
-			_bounceTimer += (float)delta;
+			_bounceTimer += dt;
 			float t = _bounceTimer / BounceDuration;
 
 			if (t >= 1f)
@@ -52,6 +100,26 @@ namespace EvoTap
 				: Mathf.Lerp(BounceScale, 1f, (t - 0.5f) * 2f);
 
 			Scale = _baseScale * scaleFactor;
+		}
+
+		// ── PODPŁYNIĘCIE CO KILKA KLIKNIĘĆ ────────────────────────────────
+
+		private void TriggerSwim()
+		{
+			if (_isSwimming) return;
+			_isSwimming = true;
+
+			float xDrift = (float)GD.RandRange(-40.0, 40.0);
+
+			var tween = CreateTween();
+			tween.SetTrans(Tween.TransitionType.Sine);
+
+			tween.TweenProperty(this, "position", _basePosition + new Vector2(xDrift, -SwimHeight), 0.5f)
+				.SetEase(Tween.EaseType.Out);
+			tween.TweenProperty(this, "position", _basePosition, 0.6f)
+				.SetEase(Tween.EaseType.In);
+
+			tween.TweenCallback(Callable.From(() => _isSwimming = false));
 		}
 
 		private void OnInputEvent(Node viewport, InputEvent inputEvent, long shapeIdx)
@@ -70,6 +138,14 @@ namespace EvoTap
 
 			TriggerBounce();
 			SpawnFloatingText(gained);
+
+			_clicksSinceSwim++;
+			if (_clicksSinceSwim >= _clicksUntilSwim)
+			{
+				_clicksSinceSwim = 0;
+				_clicksUntilSwim = (int)GD.RandRange(MinClicksForSwim, MaxClicksForSwim);
+				TriggerSwim();
+			}
 		}
 
 		private void TriggerBounce()
@@ -92,11 +168,17 @@ namespace EvoTap
 		/// <summary>
 		/// Wywołaj z CreatureLineUI gdy zmienia się forma ewolucji.
 		/// </summary>
-		public void SetCreatureAnimation(string animationName)
+		public void SetCreatureSprite(Texture2D texture)
 		{
-			if (_creatureSprite == null) return;
-			if (_creatureSprite.SpriteFrames?.HasAnimation(animationName) == true)
-				_creatureSprite.Play(animationName);
+			if (_creatureSprite == null || texture == null) return;
+			_creatureSprite.Texture = texture;
+
+			float width = texture.GetWidth();
+			if (width > 0)
+			{
+				float scale = TargetSpriteWidth / width;
+				_creatureSprite.Scale = new Vector2(scale, scale);
+			}
 		}
 	}
 }

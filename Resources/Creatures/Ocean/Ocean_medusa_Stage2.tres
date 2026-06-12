@@ -4,4 +4,7 @@
 
 [resource]
 script = ExtResource("1_kqeop")
+StageName = "Elektryczna Meduza"
+EvoLevel = 2
+DnaCostToEvolve = 4500.0
 metadata/_custom_type_script = "uid://cwntcftcmpom5"

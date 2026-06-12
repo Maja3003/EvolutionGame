@@ -4,4 +4,8 @@
 
 [resource]
 script = ExtResource("1_37c2k")
+StageName = "Strażnik Rafy"
+EvoLevel = 4
+Path = 2
+DnaCostToEvolve = 0.0
 metadata/_custom_type_script = "uid://cwntcftcmpom5"

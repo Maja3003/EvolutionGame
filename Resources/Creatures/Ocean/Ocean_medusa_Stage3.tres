@@ -4,4 +4,7 @@
 
 [resource]
 script = ExtResource("1_mltxd")
+StageName = "Pływająca Hydra"
+EvoLevel = 3
+DnaCostToEvolve = 12000.0
 metadata/_custom_type_script = "uid://cwntcftcmpom5"
