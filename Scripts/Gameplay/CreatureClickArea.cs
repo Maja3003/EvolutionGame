@@ -68,20 +68,7 @@ namespace EvoTap
 
 		private void ProcessIdleAnimation(float dt)
 		{
-			// WYŁĄCZONE — animację obsługuje NeonowaRyba Skeleton2D
-			return;
-
-			// (stary kod poniżej — zostaw, żeby przywrócić jeśli trzeba)
-			if (_creatureSprite == null || _isSwimming) return;
-
-			_idleTime += dt;
-
-			float bobY = Mathf.Sin(_idleTime * IdleBobSpeed) * IdleBobAmplitude;
-			float swayX = Mathf.Sin(_idleTime * IdleSwaySpeed + 1f) * IdleSwayAmplitude;
-			float rot = Mathf.Sin(_idleTime * IdleBobSpeed * 0.7f) * IdleRotationAmplitude;
-
-			_creatureSprite.Position = new Vector2(swayX, bobY);
-			_creatureSprite.Rotation = rot;
+			// Animację obsługuje NeonowaRyba AnimationPlayer
 		}
 
 		// ── BOUNCE PRZY KLIKNIĘCIU ────────────────────────────────────────
