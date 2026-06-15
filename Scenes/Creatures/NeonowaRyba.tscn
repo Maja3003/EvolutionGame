@@ -1,0 +1,336 @@
+[gd_scene format=3 uid="uid://doxo15cgwljlj"]
+
+[ext_resource type="Script" uid="uid://cnmlqwwc2ggtd" path="res://Scenes/Creatures/NeonowaRyba.cs" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dl56m7ytu3jbf" path="res://Assets/Creatures/Ocean/Parts/cialo.png" id="2_cialo"]
+[ext_resource type="Texture2D" uid="uid://sktky3meiu3y" path="res://Assets/Creatures/Ocean/Parts/ogon.png" id="3_ogon"]
+[ext_resource type="Texture2D" uid="uid://phyvgs8xwk2t" path="res://Assets/Creatures/Ocean/Parts/pletwa_gorna.png" id="4_pletwa_gorna"]
+[ext_resource type="Texture2D" uid="uid://c80ksuxm4swqp" path="res://Assets/Creatures/Ocean/Parts/pletwa_dolna.png" id="5_pletwa_dolna"]
+[ext_resource type="Texture2D" uid="uid://vhv7y5hq0d7j" path="res://Assets/Creatures/Ocean/Parts/pletwa_piersiowa.png" id="6_pletwa_piersiowa"]
+[ext_resource type="Texture2D" uid="uid://crg80u06hl0p1" path="res://Assets/Creatures/Ocean/Parts/oko.png" id="7_oko"]
+
+[sub_resource type="Animation" id="anim_idle"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5, 2.25, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0), Vector2(0, 6), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cialo/Ogon.:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.25, 0.0, -0.25, 0.0, 0.25, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cialo/PletwaGorna.:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5, 2.25, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.15, 0.0, -0.15, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cialo/PletwaDolna.:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5, 2.25, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.15, 0.0, 0.15, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cialo/PletwaPiersiowa.:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.15, 0.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cialo/Oko.:scale")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.8, 2.85, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.05), Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="anim_move"]
+resource_name = "move"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cialo/Ogon.:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.35, 0.0, -0.35, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 0), Vector2(0, 3), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cialo/PletwaGorna.:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.25, 0.25, -0.25]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cialo/PletwaDolna.:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.25, -0.25, 0.25]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cialo/PletwaPiersiowa.:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.2, -0.1, 0.2]
+}
+
+[sub_resource type="Animation" id="anim_special1"]
+resource_name = "rozblysk_neonowy"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.23, 0.23), Vector2(0.21, 0.21), Vector2(0.224, 0.224), Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cialo/PletwaGorna.:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.45, -0.3, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cialo/PletwaDolna.:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.45, 0.3, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cialo/Ogon.:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.35, 0.55, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, -0.5, 0.35, -0.15, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cialo/Oko.:scale")
+tracks/4/interp = 2
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.4, 1.4), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="anim_special2"]
+resource_name = "sprint_podwodny"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(80, 0), Vector2(60, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cialo/Ogon.:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, -0.5, 0.4, -0.15, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cialo/PletwaGorna.:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.35, -0.15, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cialo/PletwaDolna.:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.35, 0.15, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cialo/PletwaPiersiowa.:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.4, -0.15, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1"]
+_data = {
+&"idle": SubResource("anim_idle"),
+&"move": SubResource("anim_move"),
+&"rozblysk_neonowy": SubResource("anim_special1"),
+&"sprint_podwodny": SubResource("anim_special2")
+}
+
+[node name="NeonowaRyba" type="Node2D" unique_id=153530354]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_script")
+
+[node name="Cialo" type="Node2D" parent="." unique_id=1299377880]
+
+[node name="SpriteCialo" type="Sprite2D" parent="Cialo" unique_id=308676597]
+texture = ExtResource("2_cialo")
+
+[node name="Ogon" type="Node2D" parent="Cialo" unique_id=1751082545]
+position = Vector2(220, 0)
+
+[node name="SpriteOgon" type="Sprite2D" parent="Cialo/Ogon" unique_id=383192421]
+texture = ExtResource("3_ogon")
+offset = Vector2(-220, 0)
+
+[node name="PletwaGorna" type="Node2D" parent="Cialo" unique_id=846771728]
+position = Vector2(20, -30)
+
+[node name="SpritePletwaGorna" type="Sprite2D" parent="Cialo/PletwaGorna" unique_id=528941102]
+texture = ExtResource("4_pletwa_gorna")
+offset = Vector2(-20, 30)
+
+[node name="PletwaDolna" type="Node2D" parent="Cialo" unique_id=1118811776]
+position = Vector2(30, 30)
+
+[node name="SpritePletwaDolna" type="Sprite2D" parent="Cialo/PletwaDolna" unique_id=67747995]
+texture = ExtResource("5_pletwa_dolna")
+offset = Vector2(-30, -30)
+
+[node name="PletwaPiersiowa" type="Node2D" parent="Cialo" unique_id=427823948]
+position = Vector2(-60, 10)
+
+[node name="SpritePletwaPiersiowa" type="Sprite2D" parent="Cialo/PletwaPiersiowa" unique_id=1864908626]
+texture = ExtResource("6_pletwa_piersiowa")
+offset = Vector2(60, -10)
+
+[node name="Oko" type="Node2D" parent="Cialo" unique_id=1620920457]
+position = Vector2(-80, -10)
+
+[node name="SpriteOko" type="Sprite2D" parent="Cialo/Oko" unique_id=1248991092]
+position = Vector2(-12, 39)
+texture = ExtResource("7_oko")
+offset = Vector2(80, 10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1500692455]
+libraries/ = SubResource("AnimationLibrary_1")
+autoplay = &"idle"

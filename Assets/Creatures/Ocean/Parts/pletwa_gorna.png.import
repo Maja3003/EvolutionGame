@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drwssbfyu7xyx"
-path="res://.godot/imported/Neonka_Stage1.png-bbecf62229cbade6d089aed4734d9bfb.ctex"
+uid="uid://phyvgs8xwk2t"
+path="res://.godot/imported/pletwa_gorna.png-a4ee3c17fdf54feab5a29d8f397c87e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Creatures/Ocean/Neonka_Stage1.png"
-dest_files=["res://.godot/imported/Neonka_Stage1.png-bbecf62229cbade6d089aed4734d9bfb.ctex"]
+source_file="res://Assets/Creatures/Ocean/Parts/pletwa_gorna.png"
+dest_files=["res://.godot/imported/pletwa_gorna.png-a4ee3c17fdf54feab5a29d8f397c87e7.ctex"]
 
 [params]
 

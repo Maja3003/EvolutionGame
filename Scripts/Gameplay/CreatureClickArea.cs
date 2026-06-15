@@ -14,6 +14,7 @@ namespace EvoTap
 	/// </summary>
 	public partial class CreatureClickArea : Area2D
 	{
+		[Export] private NeonowaRyba _neonowaRyba;
 		[Export] private Sprite2D _creatureSprite;
 		[Export] private Node2D _floatingTextSpawner;
 		[Export] private PackedScene _floatingTextScene;   // res://Scenes/UI/FloatingDnaText.tscn
@@ -51,6 +52,7 @@ namespace EvoTap
 			InputEvent += OnInputEvent;
 			_baseScale = Scale;
 			_basePosition = Position;
+			_neonowaRyba?.PlayIdle();
 			_clicksUntilSwim = (int)GD.RandRange(MinClicksForSwim, MaxClicksForSwim);
 		}
 
@@ -66,6 +68,10 @@ namespace EvoTap
 
 		private void ProcessIdleAnimation(float dt)
 		{
+			// WYŁĄCZONE — animację obsługuje NeonowaRyba Skeleton2D
+			return;
+
+			// (stary kod poniżej — zostaw, żeby przywrócić jeśli trzeba)
 			if (_creatureSprite == null || _isSwimming) return;
 
 			_idleTime += dt;
@@ -139,12 +145,16 @@ namespace EvoTap
 			TriggerBounce();
 			SpawnFloatingText(gained);
 
+			// Animacja ryby przy kliknięciu
+			_neonowaRyba?.PlaySpecial1();  // rozbłysk neonowy
+
 			_clicksSinceSwim++;
 			if (_clicksSinceSwim >= _clicksUntilSwim)
 			{
 				_clicksSinceSwim = 0;
 				_clicksUntilSwim = (int)GD.RandRange(MinClicksForSwim, MaxClicksForSwim);
 				TriggerSwim();
+				_neonowaRyba?.PlayMove();  // pływanie przy swimie
 			}
 		}
 

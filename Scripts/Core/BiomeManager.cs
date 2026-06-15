@@ -29,6 +29,9 @@ namespace EvoTap
 			// Załaduj aktywny biom z zapisu
 			var savedBiome = GameManager.Instance.CurrentBiome;
 			LoadBiome(savedBiome);
+
+			// Now ActiveBiomeData is set — trigger offline DNA calculation
+			GameManager.Instance.OnBiomeDataReady();
 		}
 
 		// ── ŁADOWANIE BIOMU ───────────────────────────────────────────────

@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 namespace EvoTap
 {
@@ -34,6 +35,7 @@ namespace EvoTap
 		[Export] private CreatureClickArea _clickArea;
 
 		private CreatureManager _manager;
+		private Action<double> _onDnaChanged;
 
 		public override void _Ready()
 		{
@@ -58,7 +60,8 @@ namespace EvoTap
 			_manager.PathChoiceRequired += ShowPathChoicePopup;
 
 			// Podłącz sygnał DNA (żeby odświeżać przycisk w czasie rzeczywistym)
-			GameManager.Instance.DnaChanged += _ => RefreshButtons();
+			_onDnaChanged = _ => RefreshButtons();
+			GameManager.Instance.DnaChanged += _onDnaChanged;
 
 			// Przyciski
 			_evolveButton.Pressed += () => _manager.TryEvolve();
@@ -185,7 +188,7 @@ namespace EvoTap
 		public override void _ExitTree()
 		{
 			if (GameManager.Instance != null)
-				GameManager.Instance.DnaChanged -= _ => RefreshButtons();
+				GameManager.Instance.DnaChanged -= _onDnaChanged;
 		}
 	}
 }

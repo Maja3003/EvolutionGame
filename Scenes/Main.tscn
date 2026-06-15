@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cegp8xk7e8j2m" path="res://Scenes/Creatures/CreatureClickArea.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://baamcgab5v034" path="res://Scenes/Gameplay/FloatingDnaText.tscn" id="4_50glp"]
 [ext_resource type="Script" uid="uid://c2mvl1n6eovr6" path="res://Scripts/Core/CreatureManager.cs" id="4_v1gob"]
+[ext_resource type="PackedScene" uid="uid://doxo15cgwljlj" path="res://Scenes/Creatures/NeonowaRyba.tscn" id="4_vy5pj"]
 [ext_resource type="Resource" uid="uid://cfxkgsqb50ns6" path="res://Resources/Creatures/Ocean/Ocean_Line1.tres" id="5_jw32o"]
 [ext_resource type="PackedScene" uid="uid://cglq7o21iwqru" path="res://Scenes/Gameplay/EvolutionAnimationPlayer.tscn" id="6_v1gob"]
 [ext_resource type="PackedScene" uid="uid://b3d4l5l1pb2io" path="res://Scenes/UI/CreatureLineUI.tscn" id="7_jw32o"]
@@ -69,9 +70,12 @@ offset_top = 14.0
 offset_right = 279.0
 offset_bottom = 37.0
 
-[node name="CreatureClickArea" parent="." unique_id=40019798 instance=ExtResource("2_idj7w")]
-position = Vector2(194, 444)
+[node name="CreatureClickArea" parent="." unique_id=40019798 node_paths=PackedStringArray("_neonowaRyba") instance=ExtResource("2_idj7w")]
+position = Vector2(195, 422)
+_neonowaRyba = NodePath("NeonowaRyba")
 _floatingTextScene = ExtResource("4_50glp")
+
+[node name="NeonowaRyba" parent="CreatureClickArea" unique_id=2106523521 instance=ExtResource("4_vy5pj")]
 
 [node name="CreatureManager" type="Node" parent="." unique_id=956149255]
 script = ExtResource("4_v1gob")

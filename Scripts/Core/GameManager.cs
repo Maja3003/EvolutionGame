@@ -85,7 +85,12 @@ namespace EvoTap
 			var save = SaveManager.Instance.CurrentSave;
 			_dna = save.GlobalDna;
 			_currentBiome = Enum.Parse<BiomeType>(save.CurrentBiomeId);
+			// Offline DNA is calculated by BiomeManager after it sets ActiveBiomeData
+		}
 
+		// Called by BiomeManager._Ready() after the first biome is loaded
+		public void OnBiomeDataReady()
+		{
 			CalculateOfflineDna();
 			long elapsed = GetOfflineElapsedSeconds();
 			OfflineBonusPopup.ShowIfNeeded(_offlinePopupScene, _lastOfflineEarned, elapsed);
